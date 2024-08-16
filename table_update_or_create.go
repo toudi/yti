@@ -22,4 +22,5 @@ func (t *Table[I]) UpdateOrCreate(item I, matches func(item I) bool) error {
 func (t *Table[I]) replaceItem(item I, rowNum int) {
 	t.items[rowNum] = item
 	t.reindexItem(item, rowNum)
+	t.dirty = true
 }
